@@ -1,6 +1,6 @@
 import sys
 import pygame
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT, DEBUG
 from logger import log_state, log_event
 from player import Player
 from asteroid import Asteroid
@@ -56,4 +56,6 @@ def main(debug: bool = False):
 
 
 if __name__ == "__main__":
-    main(debug=True)  # set debug to False to disable logging features
+    # set debug to False here or in constants.py to disable logging features
+    # DEBUG is set to True by default!
+    main(debug=DEBUG)  # Please Do NOT modify here
