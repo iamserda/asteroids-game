@@ -51,4 +51,4 @@ When enabled via `logger.py`, the game writes lightweight JSONL files:
 - `game_events.jsonl`: notable events like hits and splits
 
 ## License
-MIT (or your preferred license)
+MIT
