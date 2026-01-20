@@ -8,7 +8,7 @@ from asteroidfield import AsteroidField
 from shot import Shot
 
 
-def main():
+def main(debug: bool = False):
     print(f"Starting Asteroids with pygame version: {pygame.version}!")
     print("Screen width:", SCREEN_WIDTH)
     print("Screen height:", SCREEN_HEIGHT)
@@ -42,16 +42,18 @@ def main():
         updatable.update(dt=dt)
         for asteroid in asteroids:
             if asteroid.collides_with(player):
-                log_event("player_hit")
+                if debug:
+                    log_event("player_hit")
                 print("Game over!")
                 sys.exit()
             for shot in shots:
                 if shot.collides_with(asteroid):
-                    log_event("asteroid_shot")
+                    if debug:
+                        log_event("asteroid_shot")
                     shot.kill()
                     asteroid.split()
         pygame.display.flip()
 
 
 if __name__ == "__main__":
-    main()
+    main(debug=True)  # set debug to False to disable logging features
