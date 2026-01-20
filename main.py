@@ -36,7 +36,7 @@ def main():
         for item in drawable:
             item.draw(screen=screen)
         for event in pygame.event.get():
-            if event == pygame.QUIT:
+            if event.type == pygame.QUIT:
                 return
         dt = game_clock.tick(60) / 1000
         updatable.update(dt=dt)
